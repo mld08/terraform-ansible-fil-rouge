@@ -55,6 +55,6 @@ resource "null_resource" "ansible_postdeploy" {
   depends_on = [module.frontend, module.backend, module.postgres]
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i localhost, -c local ansible/playbook.yml"
+    command = "ansible-playbook -i ansible/inventory.ini ansible/playbook.yaml"
   }
 }
