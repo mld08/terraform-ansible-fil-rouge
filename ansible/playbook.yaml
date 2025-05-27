@@ -6,7 +6,6 @@
 
   vars:
     kubeconfig : ~/.kube/config
-
   tasks:
     - name: Get backend pod name
       command: kubectl get pods -n default -l app=backend -o jsonpath="{.items[0].metadata.name}"
